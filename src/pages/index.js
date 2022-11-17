@@ -5,8 +5,38 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
-import logo from "@site/static/img/头像.jpg";
+// import logo from "@site/static/img/头像.jpg";
+import logo from "@site/static/img/自画像.png";
 import { css } from "@emotion/css";
+
+const FeatureList = [
+  {
+    title: "Support Me",
+    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    description: (
+      <>
+        Give me a star at here{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/Messiahhh/blog"
+        >
+          GitHub
+        </a>
+      </>
+    ),
+  },
+  {
+    title: "About Me",
+    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    description: <>now working at bytedance</>,
+  },
+  {
+    title: "Contact Me",
+    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    description: <>Wechat: a616348105</>,
+  },
+];
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -35,8 +65,43 @@ export default function Home() {
     >
       <HomepageHeader />
       <main>
-        <h1>プログラミング</h1>
-        <HomepageFeatures />
+        <h1 className={styles.heading}>アプリ</h1>
+        <HomepageFeatures
+          list={[
+            {
+              title: "Mahjongg Solitaire",
+              Svg: require("@site/static/img/mahjong.svg")
+                .default,
+              link: "https://game.nicovideo.jp/atsumaru/games/gm28040",
+              description: (
+                <>
+                  上海と呼ばれている有名なパズルゲームです。
+                  {/* <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://game.nicovideo.jp/atsumaru/games/gm28040"
+                  >
+                    GitHub
+                  </a> */}
+                </>
+              ),
+            },
+            {
+              title: "About Me",
+              Svg: require("@site/static/img/undraw_docusaurus_mountain.svg")
+                .default,
+              description: <>now working at bytedance</>,
+            },
+            {
+              title: "Contact Me",
+              Svg: require("@site/static/img/undraw_docusaurus_react.svg")
+                .default,
+              description: <>Wechat: a616348105</>,
+            },
+          ]}
+        />
+        <h1 className={styles.heading}>プログラミング</h1>
+        <HomepageFeatures list={FeatureList} />
       </main>
     </Layout>
   );

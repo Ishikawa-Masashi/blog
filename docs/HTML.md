@@ -27,7 +27,9 @@ sidebarDepth: 4
 ```
 
 对于以上文档的脚本资源的加载顺序是`a、b、c`，如果想要在不改变脚本执行顺序的同时让`c.js`优先于`a.js`进入请求队列，我们可以这样改。此时脚本资源的加载顺序是`c、a、b`
-
+$$
+I = \int_0^{2\pi} \sin(x)\,dx
+$$
 ``` html
 <body>
     <link rel="preload" as="script" href="c.js">
