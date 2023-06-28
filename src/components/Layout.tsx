@@ -58,6 +58,7 @@ const Layout: React.FC<Props> = ({ location, children }) => {
           <Seo isRoot={true} thumbnailSrc={rootThumbnailPath} />
           <div css={styles.header_container__inner}>
             <h1 css={styles.blog_title_area}>
+              <button className="bg-indigo-700 font-semibold text-white py-2 px-4 rounded">ボタン</button>
               <Link css={styles.blog_title} to={'/'}>
                 Takumon Blog
               </Link>

@@ -18,6 +18,7 @@ const config: GatsbyConfig = {
     '@skagami/gatsby-plugin-dark-mode',
     'gatsby-plugin-emotion',
     'gatsby-plugin-image',
+    'gatsby-plugin-postcss',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-transformer-remark',

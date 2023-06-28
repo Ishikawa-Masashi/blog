@@ -704,6 +704,7 @@ type FloatQueryOperatorInput = {
 };
 
 type Frontmatter = {
+  readonly category: Maybe<Scalars['String']>;
   readonly date: Scalars['Date'];
   readonly keywords: ReadonlyArray<Scalars['String']>;
   readonly slug: Scalars['String'];
@@ -713,6 +714,7 @@ type Frontmatter = {
 };
 
 type FrontmatterFieldSelector = {
+  readonly category: InputMaybe<FieldSelectorEnum>;
   readonly date: InputMaybe<FieldSelectorEnum>;
   readonly keywords: InputMaybe<FieldSelectorEnum>;
   readonly slug: InputMaybe<FieldSelectorEnum>;
@@ -722,6 +724,7 @@ type FrontmatterFieldSelector = {
 };
 
 type FrontmatterFilterInput = {
+  readonly category: InputMaybe<StringQueryOperatorInput>;
   readonly date: InputMaybe<DateQueryOperatorInput>;
   readonly keywords: InputMaybe<StringQueryOperatorInput>;
   readonly slug: InputMaybe<StringQueryOperatorInput>;
@@ -731,6 +734,7 @@ type FrontmatterFilterInput = {
 };
 
 type FrontmatterSortInput = {
+  readonly category: InputMaybe<SortOrderEnum>;
   readonly date: InputMaybe<SortOrderEnum>;
   readonly keywords: InputMaybe<SortOrderEnum>;
   readonly slug: InputMaybe<SortOrderEnum>;

@@ -4,7 +4,8 @@ import { useTheme } from '@skagami/gatsby-plugin-dark-mode'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 
-export const DarkToggle: React.FC = () => {
+// export const DarkToggle: React.FC = () => {
+export const DarkToggle = () => {
   const [moving, setMoving] = useState(false)
 
   const stopMoving = useCallback(() => {
@@ -22,7 +23,13 @@ export const DarkToggle: React.FC = () => {
     startMoving()
   }, [startMoving, theme, toggleTheme])
 
-  if (!theme) return null
+  // if (!theme) {
+  //   return null
+  // }
+
+  if (!theme) {
+    return <></>
+  }
 
   return (
     <div css={styles.content}>
