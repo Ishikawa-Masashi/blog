@@ -102,7 +102,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "run-s install-local-gatsby-plugins build:gatsby",
-    "build:gatsby": "gatsby build --log-pages",
+    "build:gatsby": "gatsby build --prefix-paths --log-pages",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit"
