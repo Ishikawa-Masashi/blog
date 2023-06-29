@@ -18,8 +18,8 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   rules: {
-    'no-anonymous-exports-page-templates': 'warn',
-    'limited-exports-page-templates': 'warn',
+    // 'no-anonymous-exports-page-templates': 'warn',
+    // 'limited-exports-page-templates': 'warn',
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
   },
   parserOptions: {

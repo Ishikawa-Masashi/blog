@@ -1,4 +1,5 @@
 import { GatsbyNode } from 'gatsby'
+export { createPages } from './gatsby/createPages'
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = ({ actions }) => {
   actions.createTypes(`
@@ -19,4 +20,4 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
   `)
 }
 
-exports.createPages = require('./gatsby/createPages').createPages
+// exports.createPages = require('./gatsby/createPages').createPages
