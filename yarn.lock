@@ -6272,7 +6272,7 @@ gatsby-remark-images@^7.8.0:
     unist-util-select "^3.0.4"
     unist-util-visit-parents "^3.1.1"
 
-gatsby-remark-katex@^7.8.0:
+gatsby-remark-katex@^7.11.0:
   version "7.11.0"
   resolved "https://registry.yarnpkg.com/gatsby-remark-katex/-/gatsby-remark-katex-7.11.0.tgz#9bea06cd9aca488237d4aa31a5f6191846f87466"
   integrity sha512-ShARSqw6C5eHLquwo+PjZZs1wH4fitiKsqwbvVMq7IYdPTBjrGembcfNQb77+/MkCG1WeqtIpfk/C1H9KS2pPw==
@@ -6330,7 +6330,7 @@ gatsby-source-filesystem@^5.7.0:
     valid-url "^1.0.9"
     xstate "^4.37.2"
 
-gatsby-source-graphql@^5.8.0:
+gatsby-source-graphql@^5.11.0:
   version "5.11.0"
   resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-5.11.0.tgz#8c787eef61072efbeaa22fd9f535c1285c5c6f75"
   integrity sha512-XJogWFwA/TG4bG7SM/hXWgH8NgcZe6K69q+UP0ySuiNxSsv4ZNWqKNQmZFJA374A9DdrcxVhmMH2bC3cvP7gAQ==
@@ -7770,7 +7770,7 @@ katex@^0.12.0:
   dependencies:
     commander "^2.19.0"
 
-katex@^0.16.4:
+katex@^0.16.8:
   version "0.16.8"
   resolved "https://registry.yarnpkg.com/katex/-/katex-0.16.8.tgz#89b453f40e8557f423f31a1009e9298dd99d5ceb"
   integrity sha512-ftuDnJbcbOckGY11OO+zg3OofESlbR5DRl2cmN8HeWeeFIV7wTXvAOx8kEjZjobhA+9wh2fbKeO6cdcA9Mnovg==
