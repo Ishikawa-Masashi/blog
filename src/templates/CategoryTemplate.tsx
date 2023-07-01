@@ -23,8 +23,10 @@ const CategoryTemplate: React.FC<Props> = ({ pageContext }) => {
   const targetTag = <Tag value={pageContext.tag} />
 
   const tagSearchResult = (
-    <div css={styles.tag_search_result}>
-      <FontAwesomeIcon icon={faTags} css={styles.tag_icon} />
+    // <div css={styles.tag_search_result}>
+    <div>
+      {/* <FontAwesomeIcon icon={faTags} css={styles.tag_icon} /> */}
+      <FontAwesomeIcon icon={faTags} />
       {targetTag}
       {totalCount}件
     </div>

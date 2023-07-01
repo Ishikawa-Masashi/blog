@@ -19,6 +19,7 @@ query GatsbyNodeQuery {
           tags
           keywords
           thumbnail
+          category
         }
       }
     }

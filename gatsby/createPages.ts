@@ -18,6 +18,7 @@ export const createPages = async ({ graphql, actions }: CreatePagesArgs): Promis
 
   const BlogPostTemplate = path.resolve('./src/templates/BlogPostTemplate.tsx')
   const TagsTemplate = path.resolve('./src/templates/TagsTemplate.tsx')
+  const CategoryTemplate = path.resolve('./src/templates/CategoryTemplate.tsx')
 
   const result = await graphql<QueryResult>(query)
   if (!result.data) return
@@ -102,6 +103,30 @@ export const createPages = async ({ graphql, actions }: CreatePagesArgs): Promis
       createPage({
         path: `/tags/${_kebabCase(tag)}/`,
         component: TagsTemplate,
+        context: pageContextTag,
+      })
+    })
+  )(posts)
+
+  _flow(
+    _flatMap((post: PostNodeWrapper) => post.node.frontmatter.category),
+    _uniq,
+    _forEach((category: string) => {
+      if (!category) {
+        return
+      }
+      // ソートは省略する。postsはソート済だから。
+      const nodes = posts.filter((post) => post.node.frontmatter.category === category).map((post) => post.node)
+
+      const pageContextTag: PageContextTags = {
+        nodes,
+        category,
+        tagCounts,
+      }
+
+      createPage({
+        path: `/${_kebabCase(category)}`,
+        component: CategoryTemplate,
         context: pageContextTag,
       })
     })

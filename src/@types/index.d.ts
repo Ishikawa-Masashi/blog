@@ -155,6 +155,12 @@ export type PageContextTags = {
   tagCounts: TagData
 }
 
+export type PageContextCategory = {
+  nodes: GatsbyTypes.MarkdownRemark[]
+  category: string
+  tagCounts: TagData
+}
+
 declare module 'cytoscape-cose-bilkent'
 
 export type GoogleProps = {

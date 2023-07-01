@@ -21,6 +21,9 @@ import { convertToBgImage } from 'gbimage-bridge'
 import BackgroundImage from 'gatsby-background-image'
 import { DarkToggle } from './DarkToggle'
 import HeaderAction from './HeaderAction'
+import { NavigationBar } from './NavigationBar'
+
+import 自画像 from '../images/自画像.png'
 
 type Props = {
   location: WindowLocation
@@ -31,15 +34,18 @@ const Layout: React.FC<Props> = ({ location, children }) => {
   const prefix: string = __PATH_PREFIX__ || ''
   const rootPath = `${prefix}/`
   const tagPath = `${prefix}/tags/`
+  const categoryPath = `${prefix}/category/`
 
   const { isRoot, isTag } = useMemo(() => {
     const isRoot = location.pathname === rootPath
     const isTag = location.pathname.startsWith(tagPath)
+    const isCategory = location.pathname.startsWith(categoryPath)
     return {
       isRoot,
       isTag,
+      isCategory,
     }
-  }, [location.pathname, rootPath, tagPath])
+  }, [location.pathname, rootPath, tagPath, categoryPath])
 
   const rootThumbnailPath = useRootThumbnailPath()
 
@@ -56,13 +62,15 @@ const Layout: React.FC<Props> = ({ location, children }) => {
         <BackgroundImage Tag="div" css={styles.header_container} {...convertedHeaderImage} backgroundColor={`#8A5E5F`}>
           <DarkToggle />
           <Seo isRoot={true} thumbnailSrc={rootThumbnailPath} />
+          <div className="h-20"></div>
+          <img className="w-3/12" src={`${自画像 as string}`} alt="test" />
+          <div className="text-7xl">Never Knows Best</div>
           <div css={styles.header_container__inner}>
-            <h1 css={styles.blog_title_area}>
-              <button className="bg-indigo-700 font-semibold text-white py-2 px-4 rounded">ボタン</button>
-              <Link css={styles.blog_title} to={'/'}>
+            {/* <h1 css={styles.blog_title_area}> */}
+            {/* <Link css={styles.blog_title} to={'/'}>
                 Takumon Blog
-              </Link>
-            </h1>
+              </Link> */}
+            {/* </h1> */}
             <Bio />
           </div>
           <HeaderAction />
@@ -97,6 +105,7 @@ const Layout: React.FC<Props> = ({ location, children }) => {
       <GlobalStyle />
       <HighlightStyle />
       {/* <UserHeat /> */}
+      <NavigationBar />
       {header}
       {children}
       <Footer isRoot={isRoot} />
