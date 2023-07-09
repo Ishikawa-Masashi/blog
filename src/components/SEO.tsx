@@ -13,7 +13,7 @@ type Props = {
   postDate?: string
 }
 
-const SEO: React.FC<Props> = ({ isRoot, thumbnailSrc, title, description, postUrl, postDate }) => {
+const SEO = ({ isRoot, thumbnailSrc, title, description, postUrl, postDate }: Props) => {
   const type = isRoot ? 'website' : 'article'
   const image = config.blogUrl + thumbnailSrc
   const twitterCard = 'summary_large_image'

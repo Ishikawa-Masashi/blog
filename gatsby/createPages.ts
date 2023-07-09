@@ -118,16 +118,16 @@ export const createPages = async ({ graphql, actions }: CreatePagesArgs): Promis
       // ソートは省略する。postsはソート済だから。
       const nodes = posts.filter((post) => post.node.frontmatter.category === category).map((post) => post.node)
 
-      const pageContextTag: PageContextTags = {
+      const pageContext = {
         nodes,
         category,
         tagCounts,
       }
 
       createPage({
-        path: `/${_kebabCase(category)}`,
+        path: `/category/${_kebabCase(category)}`,
         component: CategoryTemplate,
-        context: pageContextTag,
+        context: pageContext,
       })
     })
   )(posts)

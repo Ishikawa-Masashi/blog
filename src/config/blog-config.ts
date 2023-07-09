@@ -1,6 +1,6 @@
 const config = {
-  blogTitle: 'Takumon Blog',
-  blogDescription: "SIer's tech blog powered by Gatsby",
+  blogTitle: `Masashi Ishikawa's portfolio`,
+  blogDescription: `SIer's tech blog powered by Gatsby`,
   blogUrl: 'https://takumon.com',
   blogRssUrl: 'https://takumon.com/rss.xml',
   blogImageUrl: 'https://takumon.com/icons/app-sns.png', // gatsby-image経由ではない場合
@@ -10,7 +10,7 @@ const config = {
   blogRepositoryUrl: 'https://github.com/Takumon/blog',
   blogAuthorTwitterUrl: 'https://twitter.com/inouetakumon',
   blogAuthorQiitaUrl: 'https://qiita.com/Takumon',
-  blogAuthorGitHubUrl: 'https://github.com/Takumon',
+  blogAuthorGitHubUrl: 'https://github.com/Ishikawa-Masashi',
   blogAuthorFacebookUrl: 'https://www.facebook.com/takuto.inoue.54',
   facebookAppId: '1959327667485352',
   blogAuthor: 'Takumon',

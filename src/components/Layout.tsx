@@ -3,6 +3,8 @@ import { css } from '@emotion/react'
 import { Link } from 'gatsby'
 import type { WindowLocation } from '@reach/router'
 
+import _capitalize from 'lodash/fp/capitalize'
+
 import NormalizeStyle from '../styles/NormalizeStyle'
 import GlobalStyle from '../styles/GlobalStyle'
 import HighlightStyle from '../styles/HighlightStyle'
@@ -19,7 +21,7 @@ import useSpecificImages from '../hooks/useSpecificImages'
 import useRootThumbnailPath from '../hooks/useRootThumbnailPath'
 import { convertToBgImage } from 'gbimage-bridge'
 import BackgroundImage from 'gatsby-background-image'
-import { DarkToggle } from './DarkToggle'
+// import { DarkToggle } from './DarkToggle'
 import HeaderAction from './HeaderAction'
 import { NavigationBar } from './NavigationBar'
 
@@ -30,13 +32,13 @@ type Props = {
   children: React.ReactNode
 }
 
-const Layout: React.FC<Props> = ({ location, children }) => {
+const Layout = ({ location, children }: Props) => {
   const prefix: string = __PATH_PREFIX__ || ''
   const rootPath = `${prefix}/`
   const tagPath = `${prefix}/tags/`
   const categoryPath = `${prefix}/category/`
 
-  const { isRoot, isTag } = useMemo(() => {
+  const { isRoot, isTag, isCategory } = useMemo(() => {
     const isRoot = location.pathname === rootPath
     const isTag = location.pathname.startsWith(tagPath)
     const isCategory = location.pathname.startsWith(categoryPath)
@@ -60,11 +62,11 @@ const Layout: React.FC<Props> = ({ location, children }) => {
     if (isRoot) {
       return (
         <BackgroundImage Tag="div" css={styles.header_container} {...convertedHeaderImage} backgroundColor={`#8A5E5F`}>
-          <DarkToggle />
+          {/* <DarkToggle /> */}
           <Seo isRoot={true} thumbnailSrc={rootThumbnailPath} />
           <div className="h-20"></div>
-          <img className="w-3/12" src={`${自画像 as string}`} alt="test" />
-          <div className="text-7xl">Never Knows Best</div>
+          <img className="w-3/12" src={`${自画像}`} alt="test" />
+          <div className="text-4xl">Never Knows Best</div>
           <div css={styles.header_container__inner}>
             {/* <h1 css={styles.blog_title_area}> */}
             {/* <Link css={styles.blog_title} to={'/'}>
@@ -81,7 +83,7 @@ const Layout: React.FC<Props> = ({ location, children }) => {
     if (isTag) {
       return (
         <BackgroundImage Tag="div" css={styles.header_container} {...convertedHeaderImage} backgroundColor={`#8A5E5F`}>
-          <DarkToggle />
+          {/* <DarkToggle /> */}
           <Seo isRoot={true} thumbnailSrc={rootThumbnailPath} />
           <div css={styles.header_container__inner}>
             <h1 css={styles.blog_title_area}>
@@ -96,8 +98,35 @@ const Layout: React.FC<Props> = ({ location, children }) => {
       )
     }
 
+    if (isCategory) {
+      return (
+        <BackgroundImage
+          Tag="div"
+          className="flex h-80 items-center justify-center bg-cover dark:brightness-100 dark:grayscale-0 dark:hue-rotate-180 dark:saturate-100"
+          {...convertedHeaderImage}
+          backgroundColor={`#8A5E5F`}
+        >
+          {/* <DarkToggle /> */}
+          <Seo isRoot={true} thumbnailSrc={rootThumbnailPath} />
+          {/* <div css={styles.header_container__inner}> */}
+          <div className="">
+            {/* <h1 css={styles.blog_title_area}> */}
+            <h1
+              className="select-none text-6xl font-black text-white"
+              style={{ textShadow: '-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black' }}
+            >
+              {/* <Link css={styles.blog_title} to={'/'}> */}
+              {/* <Link className="" to={'/'}> */}
+              {_capitalize(location.pathname.split('/')[2])}
+              {/* </Link> */}
+            </h1>
+          </div>
+        </BackgroundImage>
+      )
+    }
+
     return ''
-  }, [isRoot, isTag, rootThumbnailPath, convertedHeaderImage])
+  }, [isRoot, isTag, isCategory, rootThumbnailPath, convertedHeaderImage, location.pathname])
 
   return (
     <div css={styles.root_container}>

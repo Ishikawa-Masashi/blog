@@ -23,16 +23,13 @@ export const DarkToggle = () => {
     startMoving()
   }, [startMoving, theme, toggleTheme])
 
-  // if (!theme) {
-  //   return null
-  // }
-
   if (!theme) {
     return <></>
   }
 
   return (
-    <div css={styles.content}>
+    // <div css={styles.content}>
+    <div>
       <div onClick={toggle} onAnimationEnd={stopMoving}>
         {theme === 'dark' ? (
           <FontAwesomeIcon css={[styles.icon, moving && styles.spin]} icon={faMoon} />

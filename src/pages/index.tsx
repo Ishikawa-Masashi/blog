@@ -7,6 +7,7 @@ import Title from '../components/Title'
 import _orderBy from 'lodash/orderBy'
 import TagList from '../components/TagList'
 import { TagCounts } from 'index'
+import { GameList } from '../components/GameList'
 
 const IndexPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   // マージして降順で並び替え
@@ -38,10 +39,12 @@ const IndexPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   }, [posts])
 
   const postFields = useMemo(() => posts.map((post) => post.node), [posts])
+  const gameFields = useMemo(() => posts.filter((post) => post.node.frontmatter.category === 'game').map((post) => post.node), [posts])
 
   return (
     <>
       <Title />
+      <GameList postFields={gameFields} />
       <PostList postFields={postFields} />
       <TagList tagCounts={tagCounts} />
     </>
@@ -60,6 +63,8 @@ export const query = graphql`
             date
             tags
             thumbnail
+            category
+            url
           }
         }
       }

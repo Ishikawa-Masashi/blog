@@ -711,6 +711,7 @@ type Frontmatter = {
   readonly tags: ReadonlyArray<Scalars['String']>;
   readonly thumbnail: Scalars['String'];
   readonly title: Scalars['String'];
+  readonly url: Maybe<Scalars['String']>;
 };
 
 type FrontmatterFieldSelector = {
@@ -721,6 +722,7 @@ type FrontmatterFieldSelector = {
   readonly tags: InputMaybe<FieldSelectorEnum>;
   readonly thumbnail: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly url: InputMaybe<FieldSelectorEnum>;
 };
 
 type FrontmatterFilterInput = {
@@ -731,6 +733,7 @@ type FrontmatterFilterInput = {
   readonly tags: InputMaybe<StringQueryOperatorInput>;
   readonly thumbnail: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
 };
 
 type FrontmatterSortInput = {
@@ -741,6 +744,7 @@ type FrontmatterSortInput = {
   readonly tags: InputMaybe<SortOrderEnum>;
   readonly thumbnail: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
+  readonly url: InputMaybe<SortOrderEnum>;
 };
 
 type GatsbyImageDataQueryOperatorInput = {

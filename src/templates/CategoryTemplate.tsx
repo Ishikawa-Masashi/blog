@@ -10,22 +10,29 @@ import Title from '../components/Title'
 import PostList from '../components/PostList'
 import Tag from '../components/Tag'
 import TagList from '../components/TagList'
-import type { PageContextTags } from '../@types'
+import type { PageContextCategory } from '../@types'
+// import { ChevronCircleRight } from '../icons/ChevronCircleRight'
 
 type Props = {
-  pageContext: PageContextTags
+  pageContext: PageContextCategory
 }
 
-const CategoryTemplate: React.FC<Props> = ({ pageContext }) => {
+const CategoryTemplate = ({ pageContext }: Props) => {
   const posts = pageContext.nodes
   const totalCount = posts && posts.length ? posts.length : 0
 
-  const targetTag = <Tag value={pageContext.tag} />
+  const targetTag = <Tag value={pageContext.category} />
 
   const tagSearchResult = (
     // <div css={styles.tag_search_result}>
     <div>
       {/* <FontAwesomeIcon icon={faTags} css={styles.tag_icon} /> */}
+      {/* <div className="mx-auto max-w-screen-md border-b-2 border-dashed border-blue-600">
+        <div className="flex pb-2">
+          <ChevronCircleRight className="fill-blue-600" />
+          <div className="text-2xl text-blue-600">Game</div>
+        </div>
+      </div> */}
       <FontAwesomeIcon icon={faTags} />
       {targetTag}
       {totalCount}件
@@ -36,8 +43,8 @@ const CategoryTemplate: React.FC<Props> = ({ pageContext }) => {
 
   return (
     <div>
-      <Title tag={pageContext.tag} />
-      {tagSearchResult}
+      <Title tag={pageContext.category} />
+      {/* {tagSearchResult} */}
       {postList}
       <TagList tagCounts={pageContext.tagCounts} />
     </div>

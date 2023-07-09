@@ -9,7 +9,7 @@ import config from '../config/blog-config'
 import useSpecificImages from '../hooks/useSpecificImages'
 
 /* highlight-range{1-3} */
-const Bio: React.FC = () => {
+const Bio = () => {
   const { avatarImage } = useSpecificImages()
 
   return (

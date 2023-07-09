@@ -5,9 +5,10 @@ dotenv.config()
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: 'Takumon Blog',
-    author: 'Takuto Inoue',
-    description: "SIer's tech blog powered by Gatsby",
+    title: "Masashi Ishikawa's portfolio",
+    author: 'Masashi Ishikawa',
+    // description: "SIer's tech blog powered by Gatsby",
+    description: "Masashi's original portfolio site powered by Gastby.",
     siteUrl: 'https://takumon.com',
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

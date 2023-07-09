@@ -14,7 +14,7 @@ import ScrollSyncToc from './ScrollSyncToc'
 import Image from './Thumbnail'
 import Pagination from './Pagination'
 import useIsScrollDownTo from '../hooks/useIsScrollDownTo'
-import { DarkToggle } from './DarkToggle'
+// import { DarkToggle } from './DarkToggle'
 import tomato from '../images/tomato.svg'
 import overlay2 from '../images/overlay2.png'
 import overlay4 from '../images/overlay4.svg'
@@ -50,7 +50,7 @@ const Post: React.FC<Props> = ({ item, headings, pageContext: { previous, next, 
       />
 
       <div css={styles.header}>
-        <DarkToggle />
+        {/* <DarkToggle /> */}
         <div css={styles.header__inner}>
           <div css={styles.header__inner__content}>
             <h4 css={styles.blog_title}>
